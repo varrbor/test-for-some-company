@@ -1,0 +1,132 @@
+.user {
+	width: 480px;
+	height: 175px;
+
+	display: flex;
+	align-items: center;
+
+	box-shadow: 0px 13px 23px -13px rgba(0, 0, 0, 0.5);
+	background-color: transparent;
+	background-color: rgba(0, 0, 0, 0.4);
+
+	border-radius: 4px;
+	
+	color: #d88a83;
+	font-weight: lighter;
+
+	margin-bottom: 10px;
+}
+
+.users__list {
+	width: 505px;
+}
+
+.avatar {
+	width: 150px;
+	height: 150px;
+
+	margin: 10px;
+}
+
+.information {
+	width: 217px;
+	margin: 10px;
+
+	font-size: 18px;
+}
+
+.element {
+	margin-bottom: 5px;
+}
+
+.fieldName {
+	color: #9f85a3;
+}
+
+.fieldName_link {
+	text-decoration: none;
+	color: #d88a83;
+}
+
+.user__more {
+	display: flex;
+
+	height: inherit;
+
+	flex-direction: column;
+	justify-content: center;
+	
+	padding: 0 30px 0 20px;
+
+	font-weight: 500;
+
+	cursor: pointer;
+}
+
+.user__more:hover {
+	background: rgba(153, 134, 168, 0.4);
+}
+
+.user__more_info{
+	width: 60px;
+	height: 80px;
+
+	margin-bottom: 10px;
+}
+
+.users__information {
+	position: relative;
+}
+
+.user__full_info {
+	position: fixed;
+	max-height: 655px;
+	top: 70px;
+	right: 90px;
+	overflow-y: scroll;
+}
+
+.arrow {
+    border: solid rgba(255, 255, 255, 0.1);
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 10px;
+}
+
+.right {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+}
+
+
+.user__full_info::-webkit-scrollbar {
+	width: 5px;
+}
+/* потом добавить */
+/*
+.user__full_info::-webkit-scrollbar-track {
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #F5F5F5;
+	border-radius: 10px;
+}
+
+.user__full_info::-webkit-scrollbar-thumb {
+	border-radius: 10px;
+	background-image: -webkit-gradient(linear,
+									   left bottom,
+									   left top,
+									   color-stop(0.44, rgb(122,153,217)),
+									   color-stop(0.72, rgb(73,125,189)),
+									   color-stop(0.86, rgb(28,58,148)));
+}*/
+
+@media (max-width: 375px) {
+	.user__full_info {
+		position: fixed;
+
+		max-height: 100%;
+		top: 70px;
+		right: -20px;
+		overflow-y: scroll;
+	}
+}
