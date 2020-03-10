@@ -1,29 +1,28 @@
-import React from 'react';
-import { createStore, applyMiddleware } from 'redux';
-import { Provider } from 'react-redux';
-import thunk from 'redux-thunk';
-import { composeWithDevTools } from 'redux-devtools-extension';
+import React, { Component } from 'react';
+import { Route, Switch } from 'react-router-dom';
+import { ThemeProvider } from '@material-ui/core/styles';
+import { lightTheme, darkTheme } from '../src/themes/Theme';
+import Layout from './hoc/Layout/Layout';
+import BurgerBuilder from './containers/BurgerBuilder/BurgerBuilder';
+import Checkout from './containers/Checkout/Checkout';
+import Orders from './containers/Orders/Orders';
 
-import rootReducer from './store/reducers.js';
-import Users from './pages/containers/usersContainer.jsx';
-import Search from './pages/containers/searchContainer.jsx';
-
-const store = createStore(
-    rootReducer,
-    composeWithDevTools(applyMiddleware(thunk))
-);
-
-export default class extends React.Component {
-  render() {
+class App extends Component {
+  render () {
     return (
-      <>
-        <Provider store={store}>
-          <Search></Search>
+        <ThemeProvider theme={lightTheme}>
           <div>
-            <Users></Users>
+            <Layout>
+              <Switch>
+                <Route path="/checkout" component={Checkout} />
+                <Route path="/orders" component={Orders} />
+                <Route path="/" exact component={BurgerBuilder} />
+              </Switch>
+            </Layout>
           </div>
-        </Provider>
-      </>
+        </ThemeProvider>
     );
   }
 }
+
+export default App;
